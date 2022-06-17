@@ -22,7 +22,8 @@ debug:
 
 clean:
 	@echo "Cleaning Files"
-	rm -f *.o *.in *.out *.ans
+	rm -f *.o *.in *.out *.ans *.sh
 
 clone:
-	@node server/index.js
+	@chmod +x clone
+	./clone
