@@ -1,0 +1,7 @@
+*.out
+*.o
+*.sh
+server/node_modules/
+*.in
+*.out
+*.ans
