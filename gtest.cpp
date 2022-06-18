@@ -1,9 +1,9 @@
-/**
- * File              : gtest.cpp
- * Author            : Manash Baul <mximpaid@gmail.com>
- * Date              : 30.04.2022
+/*
+ * Author: Manash Baul <mximpaid@gmail.com>
+ * @param: The deeper you go, the more still you become.
  */
-#include<bits/stdc++.h>
+
+#include <bits/stdc++.h>
 using namespace std;
 
 #ifdef LOCAL
@@ -12,15 +12,13 @@ using namespace std;
 
 #define sz(x) ((int)(x).size())
 #define A(x) (x).begin(), (x).end()
+void _read();
 
-int main() {
-  cout << "Hello World!";
+int main() { _read();
+  
 }
 
 void _read() {
   ios_base ::sync_with_stdio(false);
   cin.tie(nullptr);
-#ifdef LOCAL
-  freopen("input.txt", "r", stdin);
-#endif
 }
