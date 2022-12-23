@@ -3,7 +3,14 @@
  * @param: The deeper you go, the more still you become.
  */
 
-#include <bits/stdc++.h>
+#include <algorithm>
+#include <iostream>
+#include <map>
+#include <set>
+#include <numeric>
+#include <string>
+#include <utility>
+#include <vector>
 using namespace std;
 
 #ifdef LOCAL
@@ -15,7 +22,7 @@ using namespace std;
 void _read();
 
 int main() { _read();
-  
+
 }
 
 void _read() {

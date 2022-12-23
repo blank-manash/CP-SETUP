@@ -30,3 +30,4 @@ clone:
 	./parser
 
 restart: clean start clone
+	nvim gtest.cpp
