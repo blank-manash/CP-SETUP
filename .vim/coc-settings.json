@@ -1,4 +1,4 @@
 {
-    "clangd.path": "/home/manash/.config/coc/extensions/coc-clangd-data/install/14.0.0/clangd_14.0.0/bin/clangd",
+    "clangd.path": "/Users/manash.baul/.config/coc/extensions/coc-clangd-data/install/14.0.3/clangd_14.0.3/bin/clangd",
     "clangd.fallbackFlags": ["-std=c++20", "-DLOCAL"]
 }
