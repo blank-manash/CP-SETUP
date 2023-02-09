@@ -14,30 +14,24 @@ function output(i) {
 
 
 function writeScript(num) {
-    const green = "\\e[32;1m";
-    const red = "\\e[31;1m"
-    const greenForegound = "\\e[42;1m"
-    const reset = "\\e[0m"
-
-    const printColoredString = function(str, code) {
-        return `${code} ${str} ${reset}`;
-    }
-
     const script =
 `#!/bin/bash
+source ~/scripts/bash_utils.bash
+e_header "Test Cases"
 TEST_CASES=${num}
 for (( i=0; i<TEST_CASES; i++ )); do
     ./gtest.o < "input_\${i}.in" > answer_\${i}.ans
-    diff -w -y --color=always "answer_\${i}.ans" "out_\${i}.out";
+    colordiff -w -y "answer_\${i}.ans" "out_\${i}.out" | diff-so-fancy;
+    diff -w -y "answer_\${i}.ans" "out_\${i}.out"
     value="$?"
     if [[ value -eq 0 ]]; then
-        echo -e "${printColoredString("PASSED \${i}", green)}"
+        e_success "Passed \${i}"
     else
-        echo -e "${printColoredString("FAILED", red)}"
+        e_error "Failed \${i}"
         exit 1
     fi
 done
-echo -e "Congratulations, ${printColoredString("ACCEPTED", greenForegound)}"
+e_success "Congratulations, ACCEPTED"
 `
     fs.writeFileSync("script.sh", script);
 }
