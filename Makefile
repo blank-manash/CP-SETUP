@@ -17,7 +17,7 @@ prod_build:
 debug:
 	@echo "Compiling File and Starting Debugger"
 	g++ -std=c++17 -DLOCAL -ggdb gtest.cpp -o gtest.debug.o
-	gdb --tui gtest.debug.o
+	gdb gtest.debug.o
 
 clean:
 	@echo "Cleaning Files"
@@ -25,8 +25,17 @@ clean:
 
 start:
 	rm gtest.cpp && cp template.cpp gtest.cpp
+	node server/index.js
+	nvim gtest.cpp
+
+add:
+	@gum write --placeholder="Add Input (Ctrl-D to Finish)" --char-limit=0 > "input_${num}.in"
+	@gum write --placeholder="Add Output" --char-limit=0 > "out_${num}.out"
+	sed -e "s/^TEST_CASES.*/TEST_CASES=${num}/" script.sh > tmp_script
+	rm script.sh && mv tmp_script script.sh
+
 
 clone:
-	./parser
+	node server/index.js
 
-restart: clean start clone
+restart: clean start

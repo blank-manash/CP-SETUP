@@ -7,3 +7,4 @@ server/node_modules/
 *.ans
 server/
 gtest.cpp
+.gdb_history

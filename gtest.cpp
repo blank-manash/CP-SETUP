@@ -15,7 +15,7 @@ using namespace std;
 void _read();
 
 int main() { _read();
-  
+
 }
 
 void _read() {
