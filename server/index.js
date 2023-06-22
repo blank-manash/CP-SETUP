@@ -20,9 +20,11 @@ source ~/scripts/bash_utils.bash
 e_header "Test Cases"
 TEST_CASES=${num}
 for (( i=0; i<TEST_CASES; i++ )); do
-    ./gtest.o < "input_\${i}.in" > answer_\${i}.ans
+    rm -f "input.txt"
+    cp "input_\${i}.in" "input.txt"
+    ./gtest.o > answer_\${i}.ans
     colordiff -w -y "answer_\${i}.ans" "out_\${i}.out" | diff-so-fancy;
-    diff -w -y "answer_\${i}.ans" "out_\${i}.out"
+    diff -w -y "answer_\${i}.ans" "out_\${i}.out" 2>&1 > /dev/null
     value="$?"
     if [[ value -eq 0 ]]; then
         e_success "Passed \${i}"

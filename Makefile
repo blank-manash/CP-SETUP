@@ -16,8 +16,7 @@ prod_build:
 
 debug:
 	@echo "Compiling File and Starting Debugger"
-	g++ -std=c++17 -DLOCAL -ggdb gtest.cpp -o gtest.debug.o
-	gdb --tui gtest.debug.o
+	clang++ -std=c++17 -DLOCAL -g gtest.cpp -o gtest.debug.o
 
 clean:
 	@echo "Cleaning Files"
@@ -27,7 +26,10 @@ start:
 	rm gtest.cpp && cp template.cpp gtest.cpp
 
 clone:
-	./parser
+	node server/index.js
 
 restart: clean start clone
 	nvim gtest.cpp
+
+copy:
+	cat gtest.cpp | pbcopy

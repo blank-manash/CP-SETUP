@@ -28,4 +28,7 @@ int main() { _read();
 void _read() {
   ios_base ::sync_with_stdio(false);
   cin.tie(nullptr);
+#ifdef LOCAL
+  freopen("input.txt","r",stdin);
+#endif
 }
