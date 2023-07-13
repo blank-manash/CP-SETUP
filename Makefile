@@ -4,7 +4,7 @@ test: prod_build
 	@./script.sh
 
 run: build
-	./gtest.o < in.in
+	./gtest.o
 
 build:
 	@echo "Running Build With flags"
@@ -20,7 +20,7 @@ debug:
 
 clean:
 	@echo "Cleaning Files"
-	rm -f *.o *.in *.out *.ans *.sh
+	rm -rf *.o *.in *.out *.ans *.sh gtest.dYSM/
 
 start:
 	rm gtest.cpp && cp template.cpp gtest.cpp

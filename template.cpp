@@ -11,6 +11,9 @@
 #include <string>
 #include <utility>
 #include <vector>
+#include <queue>
+#include <stack>
+#include <array>
 using namespace std;
 
 #ifdef LOCAL
@@ -21,8 +24,19 @@ using namespace std;
 #define A(x) (x).begin(), (x).end()
 void _read();
 
-int main() { _read();
+using i64 = long long;
+const int INF = 1e9 + 49;
 
+void solve() {
+
+}
+
+int main() { _read();
+  int t;
+  cin >> t;
+  while(t--) {
+    solve();
+  }
 }
 
 void _read() {

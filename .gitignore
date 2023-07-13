@@ -6,4 +6,5 @@ server/node_modules/
 *.out
 *.ans
 server/
+gtest.dSYM/
 gtest.cpp
