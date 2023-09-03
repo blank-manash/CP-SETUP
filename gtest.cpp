@@ -25,21 +25,9 @@ using namespace std;
 void _read();
 
 using i64 = long long;
-const int INF = 1e9 + 45;
+const int INF = 1e9 + 49;
+
 void solve() {
-  int n;
-  cin >> n;
-  vector<int> a(n + 1), dp(n + 1), ac(n + 1, -INF);
-  for(int i = 1; i <= n; i++) {
-    cin >> a[i];
-  }
-
-  for(int i = 1; i <= n; i++) {
-    dp[i] = max(dp[i - 1], ac[a[i]] + i + 1);
-    ac[a[i]] = max(ac[a[i]], dp[i - 1] - i);
-  }
-
-  cout << dp[n] << "\n";
 
 }
 

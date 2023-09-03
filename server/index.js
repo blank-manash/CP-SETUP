@@ -27,9 +27,9 @@ for (( i=0; i<TEST_CASES; i++ )); do
     diff -w -y "answer_\${i}.ans" "out_\${i}.out" 2>&1 > /dev/null
     value="$?"
     if [[ value -eq 0 ]]; then
-        e_success "Passed \${i}"
+        e_success "Passed \$((i+1))"
     else
-        e_error "Failed \${i}"
+        e_error "Failed \$((i+1))"
         exit 1
     fi
 done
