@@ -22,13 +22,13 @@ using namespace std;
 
 #define sz(x) ((int)(x).size())
 #define A(x) (x).begin(), (x).end()
+#define UNI(x) sort(A(x)); (x).erase(unique(A(x)),(x).end())
 void _read();
 
 using i64 = long long;
 const int INF = 1e9 + 49;
 
 void solve() {
-
 }
 
 int main() { _read();
