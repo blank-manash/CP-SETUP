@@ -27,6 +27,7 @@ start:
 	rm -f gtest.java && cp template.java gtest.java
 
 clone:
-	./parser
+	@echo "Starting Competitive Companion server (port 1327). Use browser extension to send problem."
+	node server/index.js
 
 restart: clean start clone
