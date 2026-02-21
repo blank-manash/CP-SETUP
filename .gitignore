@@ -1,9 +1,27 @@
-*.out
+# Build artifacts
+*.class
 *.o
-*.sh
-server/node_modules/
+*.jar
+*.war
+
+# Test / run inputs and outputs (local or generated)
 *.in
 *.out
 *.ans
+input.txt
+
+# Server and dependencies
 server/
-gtest.cpp
+server/node_modules/
+node_modules/
+
+# IDE and OS
+.idea/
+*.iml
+.vscode/
+.DS_Store
+
+# Java (if you add Maven/Gradle later)
+target/
+build/
+*.log
