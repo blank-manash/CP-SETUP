@@ -4,27 +4,27 @@ test: prod_build
 	@./script.sh
 
 run: build
-	./gtest.o < in.in
+	java gtest < in.in
 
 build:
 	@echo "Running Build With flags"
-	g++ -std=c++17 -DLOCAL -DDEBUG  -Wall -Wextra -pedantic -O2 -Wshadow -Wformat=2 -Wfloat-equal -Wconversion -Wlogical-op -Wshift-overflow=2 -Wduplicated-cond -Wcast-qual -Wcast-align -D_GLIBCXX_DEBUG -D_GLIBCXX_DEBUG_PEDANTIC -D_FORTIFY_SOURCE=2 -fsanitize=address -fsanitize=undefined -fno-sanitize-recover -fstack-protector gtest.cpp -o gtest.o
+	javac Debug.java gtest.java
 
 prod_build:
 	@echo "Running Fast Build"
-	g++ -std=c++17 -DLOCAL gtest.cpp -o gtest.o
+	javac Debug.java gtest.java
 
 debug:
 	@echo "Compiling File and Starting Debugger"
-	g++ -std=c++17 -DLOCAL -ggdb gtest.cpp -o gtest.debug.o
-	gdb --tui gtest.debug.o
+	javac -g Debug.java gtest.java
+	jdb gtest
 
 clean:
 	@echo "Cleaning Files"
-	rm -f *.o *.in *.out *.ans *.sh
+	rm -f *.class *.in *.out *.ans *.sh
 
 start:
-	rm gtest.cpp && cp template.cpp gtest.cpp
+	rm -f gtest.java && cp template.java gtest.java
 
 clone:
 	./parser
